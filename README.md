@@ -2,11 +2,14 @@
 
 - built using create-react-app
 - configured with css
+- routing-react-router-dom
 
 # features
 
 - signup/login page
-- home page (access only if logged in)
+  - header
+  - form page
+- home/browse page (access only if logged in)
 
   - header component
     - nav menu
