@@ -3,6 +3,9 @@
 - built using create-react-app
 - configured with css
 - routing-react-router-dom
+- header
+- login form
+- signup form
 
 # features
 
