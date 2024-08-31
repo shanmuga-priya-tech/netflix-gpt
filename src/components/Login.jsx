@@ -1,11 +1,30 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { validateData } from "../utils/validate";
 
 function Login() {
   const [isSignIn, setIsSignIn] = useState(true);
 
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  const username = useRef(null);
+  const email = useRef(null);
+  const password = useRef(null);
+
   const toggleSignInForm = () => {
     setIsSignIn(!isSignIn);
+  };
+
+  const handleButtonClick = () => {
+    const msg = validateData(
+      isSignIn ? null : username?.current?.value, // Pass null for username when signing in
+      email?.current?.value,
+      password?.current?.value,
+      isSignIn // Pass isSignIn flag to validation
+    );
+    setErrorMsg(msg);
+    email.current.value = null;
+    password.current.value = null;
   };
 
   return (
@@ -17,13 +36,17 @@ function Login() {
           alt="netflix-banner"
         />
       </div>
-      <form className="p-12 w-3/12 bg-black absolute m-36 mx-auto right-0 left-0 text-white bg-opacity-80">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="p-12 w-3/12 bg-black absolute m-36 mx-auto right-0 left-0 text-white bg-opacity-80"
+      >
         <h1 className="p-2 font-bold text-3xl py-4">
           Sign {isSignIn ? "In" : "Up"}
         </h1>
 
         {!isSignIn && (
           <input
+            ref={username}
             type="text"
             placeholder="Full Name"
             className="p-2 my-3 w-full  bg-gray-700"
@@ -31,16 +54,24 @@ function Login() {
         )}
 
         <input
+          ref={email}
           type="text"
           placeholder="Email Address"
           className="p-2 my-3 w-full  bg-gray-700"
         />
         <input
+          ref={password}
           type="password"
           placeholder="Password"
           className="p-2 my-3 w-full bg-gray-700 "
         />
-        <button className="p-4  my-6 w-full bg-red-700 rounded">
+
+        <p className="text-red-500 font-semibold text-lg">{errorMsg}</p>
+
+        <button
+          className="p-4  my-6 w-full bg-red-700 rounded"
+          onClick={handleButtonClick}
+        >
           Sign {isSignIn ? "In" : "Up"}
         </button>
         <p className="py-4">

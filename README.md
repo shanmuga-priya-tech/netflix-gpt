@@ -6,6 +6,7 @@
 - header
 - login form
 - signup form
+- form validation
 
 # features
 
