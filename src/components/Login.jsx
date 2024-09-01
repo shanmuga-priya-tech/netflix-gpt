@@ -48,7 +48,7 @@ function Login() {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMsg(errorCode + "-" + errorMessage);
+          setErrorMsg("User already Exists! Try Signing In");
         });
     } else {
       signInWithEmailAndPassword(
@@ -64,7 +64,7 @@ function Login() {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMsg(errorCode + "-" + errorMessage);
+          setErrorMsg("Incorrect Email Id / password");
         });
     }
   };
