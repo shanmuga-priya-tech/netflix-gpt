@@ -10,6 +10,7 @@
 - Authentication(firebase)(disable cors extension for connecting email providers)
 - firebase deployment(project url:https://netflixgpt-e0fdd.web.app)
 - created redux store
+- signout logic
 
 # features
 
