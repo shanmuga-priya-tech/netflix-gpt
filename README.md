@@ -11,6 +11,9 @@
 - firebase deployment(project url:https://netflixgpt-e0fdd.web.app)
 - created redux store
 - signout logic
+- Bugfix:updating the username and profile picture of the user when signup and then navigate it to browse page with this updated data to display pic else it only appears once the page reloads.
+
+- Bugfix: redirect to appropriate route only after authentication not manually.
 
 # features
 
