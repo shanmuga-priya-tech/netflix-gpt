@@ -1,4 +1,4 @@
-import { PLAY_ICON } from "../utils/constants";
+import { MORE_INFO, PLAY_ICON } from "../utils/constants";
 
 function videoTitle({ title, overview }) {
   return (
@@ -10,7 +10,8 @@ function videoTitle({ title, overview }) {
           <img className="w-6" src={PLAY_ICON} alt="play-icon" />
           Play
         </button>
-        <button className="bg-gray-200  items-center px-12 rounded-md text-xl text-black font-bold  p-4 ">
+        <button className="bg-gray-200 flex gap-1 items-center px-8 rounded-md text-xl text-black font-bold  p-4 ">
+          <img className="w-6" src={MORE_INFO} alt="more-info" />
           More Info
         </button>
       </div>
