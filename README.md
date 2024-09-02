@@ -23,6 +23,7 @@
   - Added harcoded value to the constants file.
 
 - "TMDB" => Movie Api =>get access token
+- craeted movieSlice
 
 # features
 
