@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { PROFILE } from "../utils/constants";
 
 function Login() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -48,8 +49,7 @@ function Login() {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: username.current.value,
-            photoURL:
-              "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg?20200418092106",
+            photoURL: PROFILE,
           })
             .then(() => {
               // Profile updated!
