@@ -12,3 +12,7 @@ export const API_OPTION = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTQ0ZWNmYjk2NDUwMTdkNmZiMzczZTlhNjQ5YWM1MiIsIm5iZiI6MTcyNTI1NjA0NS43OTUxMDgsInN1YiI6IjY2ZDU0ZGY1ODI4YjdlMTM0MDMwMjA0YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SglF813ercVkn5bOA5UsVYaxRmLCz5RaDjY6SZkmMXc",
   },
 };
+
+export const PLAY_ICON = "https://cdn-icons-png.flaticon.com/128/27/27223.png";
+
+//https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt

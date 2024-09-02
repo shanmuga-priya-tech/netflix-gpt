@@ -1,11 +1,15 @@
 import useFetchMovieData from "../hooks/useFetchMovie";
 import Header from "./Header";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
 function Browse() {
-  const data = useFetchMovieData();
+  useFetchMovieData();
   return (
     <div>
       <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 }
