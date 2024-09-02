@@ -13,8 +13,8 @@ function MainContainer() {
 
   return (
     <div>
-      <VideBackgorund movieID={id} />
       <VideoTitle title={original_title} overview={overview} />
+      <VideBackgorund movieID={id} />
     </div>
   );
 }
