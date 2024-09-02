@@ -21,9 +21,11 @@ function Header() {
       });
   };
 
-  //logic for updating the store data whenever user signin,singup,signout usin onAuthStateChanged api
+  //onAuthStateChanged api is used to add event listener to monitor the state change of authentication.
+  //whenever the state is changed we update the store with the appropriate data.
+  //onAuthStateChange returns a unsubscribe fn which is used to cleanup the attached event listener when the component unmounts.
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -40,6 +42,9 @@ function Header() {
         navigate("/");
       }
     });
+
+    //unsubscribe whenver the componenet unmount
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -52,11 +57,7 @@ function Header() {
 
       {user && (
         <div className="flex p-2 items-center">
-          <img
-            className="rounded-md w-8 h-8"
-            src={user.photoURL}
-            alt="signout img"
-          />
+          <img className="rounded-md w-8 h-8" src={user?.photoURL} alt="img" />
           <button className="font-bold text-white" onClick={handleSignOut}>
             Sign Out
           </button>

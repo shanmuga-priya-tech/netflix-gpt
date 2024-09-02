@@ -15,6 +15,9 @@
 
 - Bugfix: redirect to appropriate route only after authentication not manually.
 
+- unsubscribe to the onAuthStateChanged Api: When the component unmounts, we need to clean up the listener to prevent memory leaks or unwanted updates after the component is no longer in the UI.
+  "unsubscribe" is the cleanup function returned by onAuthStateChanged. It stops the listener from monitoring authentication state changes when the component is destroyed (unmounted).
+
 # features
 
 - signup/login page
