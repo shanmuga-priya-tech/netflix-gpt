@@ -47,7 +47,7 @@
   - header
   - form page
 - home/browse page (access only if logged in)
-- multiple language feature
+- **multiple language feature**
 - Browse page setup:
 
   - header component
