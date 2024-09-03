@@ -4,9 +4,10 @@ import { API_OPTION } from "../utils/constants";
 import { addTrailerVideo } from "../utils/movieSlice";
 import { useEffect } from "react";
 
-function VideBackground({ movieID }) {
+function VideoBackground({ movieID }) {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const getMovieVideo = async () => {
       const res = await fetch(
@@ -16,28 +17,30 @@ function VideBackground({ movieID }) {
       const data = await res.json();
 
       const filteredTrailers = data.results.filter(
-        (video) => video.type === "Trailer"
+        (video) => video.type === "Trailer" && video.name === "Official Trailer"
       );
+
       const trailer = filteredTrailers.length
-        ? filteredTrailers[1]
+        ? filteredTrailers[0]
         : data.results[0];
 
-      //adding the trailer video into a store and getting it back again from store for id instead of creating a state var
       dispatch(addTrailerVideo(trailer));
     };
+
     getMovieVideo();
-  }, []);
+  }, [movieID, dispatch]);
 
   return (
-    <div className="w-screen">
+    <div className="relative w-full h-screen overflow-hidden -z-10">
       <iframe
-        className="w-screen aspect-video "
-        src={`https://www.youtube.com/embed/${trailerVideo?.key}?&autoplay=1&mute=1`}
+        className="absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+        src={`https://www.youtube.com/embed/${trailerVideo?.key}?&autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&rel=0`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        frameBorder="0"
       ></iframe>
     </div>
   );
 }
 
-export default VideBackground;
+export default VideoBackground;
