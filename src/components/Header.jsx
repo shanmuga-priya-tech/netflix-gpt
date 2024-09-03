@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO } from "../utils/constants";
 import { toggleGptSearchBar } from "../utils/gptSlice";
+import lang from "../utils/languageConstants";
+import { SUPPPORTED_LANG } from "../utils/languageConstants";
+import { updateLanguage } from "../utils/configSlice";
 
 function Header() {
   const navigate = useNavigate();
@@ -54,17 +57,31 @@ function Header() {
     dispatch(toggleGptSearchBar());
   };
 
+  const handleLangOption = (e) => {
+    dispatch(updateLanguage(e.target.value));
+  };
+
   return (
     <div className="absolute w-screen px-20 py-2 bg-gradient-to-b from-black  z-10 flex justify-between">
       <img className="w-48 " src={LOGO} alt="netflix-logo" />
 
       {user && (
         <div className="flex p-2 items-center">
+          <select
+            className="p-2 bg-gray-900 text-white m-2"
+            onChange={handleLangOption}
+          >
+            {SUPPPORTED_LANG.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
           <button
             onClick={handleGPTSearch}
-            className="py-2 px-4 m-2 bg-slate-500 bg-opacity-60 text-white rounded-lg mx-4 hover:bg-red-600"
+            className="py-2 px-4 m-2 bg-red-600  bg-opacity-70 text-white rounded-lg mx-4 hover:bg-red-600"
           >
-            GPT Search
+            {lang.tam.HeaderSearchBox}
           </button>
           <img className="rounded-md w-10 " src={user?.photoURL} alt="img" />
           <button className="font-bold text-white" onClick={handleSignOut}>
