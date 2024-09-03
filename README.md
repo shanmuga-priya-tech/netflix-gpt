@@ -24,6 +24,15 @@
 
 - "TMDB" => Movie Api =>get access token
 - craeted movieSlice
+- created videoTrailer Slice
+- created custom hook to fetch movie data
+- planning for Main Container
+  - video background(tmdb Api + youtube video embedded with autoplay & mute)
+  - video Title(tmdb api)
+- Secondary Container
+  - movielist
+    - trending Now
+    - documentaries
 
 # features
 

@@ -17,4 +17,4 @@ export const PLAY_ICON = "https://cdn-icons-png.flaticon.com/128/27/27223.png";
 export const MORE_INFO =
   "https://cdn-icons-png.flaticon.com/128/6583/6583141.png";
 
-//https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt
+export const IMG_URL = "https://image.tmdb.org/t/p/w500";
