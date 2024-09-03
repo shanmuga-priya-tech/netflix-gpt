@@ -13,6 +13,9 @@ export const API_OPTION = {
   },
 };
 
+export const NETFLIX_BANNER =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/1d29f9a4-1900-43dc-a420-99044f734ee2/cc3b7bcb-3f79-449e-a37c-26ffb20fce3c/IN-en-20240826-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7a193436-88c7-4f66-a8f0-e191d3b26d13_large.jpg";
+
 export const PLAY_ICON = "https://cdn-icons-png.flaticon.com/128/27/27223.png";
 export const MORE_INFO =
   "https://cdn-icons-png.flaticon.com/128/6583/6583141.png";

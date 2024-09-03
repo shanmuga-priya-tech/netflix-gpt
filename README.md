@@ -36,6 +36,8 @@
     - trending
     - top rated
     - upcoming
+- GPT USAGE:
+  - search bar
 
 # features
 
