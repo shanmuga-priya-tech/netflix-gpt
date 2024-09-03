@@ -1,7 +1,6 @@
 import { IMG_URL } from "../utils/constants";
 
 function MovieCard({ movie }) {
-  console.log(movie);
   const { poster_path } = movie;
   return (
     <div className="w-48 pr-4">
