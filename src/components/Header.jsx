@@ -15,6 +15,8 @@ function Header() {
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
+  const selectedLang = useSelector((store) => store.config.lang);
+  const showGptSearch = useSelector((store) => store.GPT.showGptSearch);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -81,11 +83,13 @@ function Header() {
             onClick={handleGPTSearch}
             className="py-2 px-4 m-2 bg-red-600  bg-opacity-70 text-white rounded-lg mx-4 hover:bg-red-600"
           >
-            {lang.tam.HeaderSearchBox}
+            {showGptSearch
+              ? lang[selectedLang].homepage
+              : lang[selectedLang].HeaderSearchBox}
           </button>
           <img className="rounded-md w-10 " src={user?.photoURL} alt="img" />
           <button className="font-bold text-white" onClick={handleSignOut}>
-            Sign Out
+            {lang[selectedLang].signoutbtn}
           </button>
         </div>
       )}

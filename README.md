@@ -37,7 +37,9 @@
     - top rated
     - upcoming
 - GPT USAGE:
-  - search bar
+  - search bar page
+  - search container
+- implemented a multiple language feature(eng,tam,hindi)
 
 # features
 
@@ -45,11 +47,13 @@
   - header
   - form page
 - home/browse page (access only if logged in)
+- multiple language feature
+- Browse page setup:
 
   - header component
     - nav menu
     - movie trailer playing
     - movie title and description with play button
-  - movie suggestion carousel
+  - movie suggestion/category carousel
 
 - Gpt suugestion search bar
