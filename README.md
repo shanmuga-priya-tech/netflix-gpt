@@ -30,9 +30,12 @@
   - video background(tmdb Api + youtube video embedded with autoplay & mute)
   - video Title(tmdb api)
 - Secondary Container
-  - movielist
-    - trending Now
-    - documentaries
+  - movielist(tmdb api)
+    - now playing
+    - popular
+    - trending
+    - top rated
+    - upcoming
 
 # features
 

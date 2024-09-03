@@ -1,6 +1,7 @@
 import useFetchMovieData from "../hooks/useFetchMovie";
 import useFetchPopularMovieData from "../hooks/useFetchPopularMovie";
 import useFetchTopRatedMovieData from "../hooks/useFetchTopRatedMovie";
+import useFetchTrendingMovieData from "../hooks/useFetchTrendingMovies";
 import useFetchUpcomingMovieData from "../hooks/useFetchUpcomigMovies";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
@@ -11,6 +12,7 @@ function Browse() {
   useFetchPopularMovieData();
   useFetchTopRatedMovieData();
   useFetchUpcomingMovieData();
+  useFetchTrendingMovieData();
   return (
     <div>
       <Header />
