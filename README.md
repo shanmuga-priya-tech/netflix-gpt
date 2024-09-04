@@ -37,8 +37,14 @@
     - top rated
     - upcoming
 - GPT USAGE:
+
   - search bar page
+    - got result using openai api
+    - searched those results to get data of the movies in tmdb api
+    - created a state and action to store these results in movie slice.
   - search container
+    - using the result from store
+
 - implemented a multiple language feature(eng,tam,hindi)
 
 # features
