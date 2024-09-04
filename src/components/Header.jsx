@@ -3,12 +3,12 @@ import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { addUser, removeUser } from "../utils/userSlice";
+import { addUser, removeUser } from "../utils/store/userSlice";
 import { LOGO } from "../utils/constants";
-import { toggleGptSearchBar } from "../utils/gptSlice";
+import { toggleGptSearchBar } from "../utils/store/gptSlice";
 import lang from "../utils/languageConstants";
 import { SUPPPORTED_LANG } from "../utils/languageConstants";
-import { updateLanguage } from "../utils/configSlice";
+import { updateLanguage } from "../utils/store/configSlice";
 
 function Header() {
   const navigate = useNavigate();

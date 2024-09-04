@@ -1,4 +1,4 @@
-import { IMG_URL } from "../utils/constants";
+import { IMG_URL } from "../../../utils/constants";
 
 function MovieCard({ movie }) {
   const { poster_path } = movie;

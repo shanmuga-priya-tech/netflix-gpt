@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTION } from "../utils/constants";
-import { addTrendingMovies } from "../utils/movieSlice";
+import { addTrendingMovies } from "../utils/store/movieSlice";
 import { useEffect } from "react";
 
 const useFetchTrendingMovieData = () => {

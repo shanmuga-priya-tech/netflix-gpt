@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { API_OPTION } from "../utils/constants";
-import { addTrailerVideo } from "../utils/movieSlice";
+import { API_OPTION } from "../../../utils/constants";
+import { addTrailerVideo } from "../../../utils/store/movieSlice";
 import { useEffect } from "react";
 
 function VideoBackground({ movieID }) {

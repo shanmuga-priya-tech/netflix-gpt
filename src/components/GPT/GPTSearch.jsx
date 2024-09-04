@@ -1,6 +1,6 @@
 import GPTMovieSuggestion from "./GPTMovieSuggestion";
 import GptSearchBar from "./GptSearchBar";
-import { NETFLIX_BANNER } from "../utils/constants";
+import { NETFLIX_BANNER } from "../../utils/constants";
 
 function GPTSearch() {
   return (

@@ -1,4 +1,4 @@
-import { MORE_INFO, PLAY_ICON } from "../utils/constants";
+import { MORE_INFO, PLAY_ICON } from "../../../utils/constants";
 
 function videoTitle({ title, overview }) {
   return (

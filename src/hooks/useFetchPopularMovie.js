@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTION } from "../utils/constants";
-import { addPopularMovies } from "../utils/movieSlice";
+import { addPopularMovies } from "../utils/store/movieSlice";
 import { useEffect } from "react";
 
 const useFetchPopularMovieData = () => {
