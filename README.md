@@ -46,6 +46,7 @@
     - using the result from store
 
 - implemented a multiple language feature(eng,tam,hindi)
+- memoization
 
 # features
 

@@ -26,9 +26,10 @@ function VideoBackground({ movieID }) {
 
       dispatch(addTrailerVideo(trailer));
     };
-
-    getMovieVideo();
-  }, [movieID, dispatch]);
+    if (!trailerVideo) {
+      getMovieVideo();
+    }
+  }, [movieID, dispatch, trailerVideo]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden -z-10">

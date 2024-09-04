@@ -8,8 +8,7 @@ export const API_OPTION = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTQ0ZWNmYjk2NDUwMTdkNmZiMzczZTlhNjQ5YWM1MiIsIm5iZiI6MTcyNTI1NjA0NS43OTUxMDgsInN1YiI6IjY2ZDU0ZGY1ODI4YjdlMTM0MDMwMjA0YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SglF813ercVkn5bOA5UsVYaxRmLCz5RaDjY6SZkmMXc",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -21,3 +20,5 @@ export const MORE_INFO =
   "https://cdn-icons-png.flaticon.com/128/6583/6583141.png";
 
 export const IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
