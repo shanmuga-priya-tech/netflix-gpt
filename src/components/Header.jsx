@@ -68,7 +68,7 @@ function Header() {
       <img className="w-48 mx-auto md:mx-0" src={LOGO} alt="netflix-logo" />
 
       {user && (
-        <div className="flex p-2 items-center">
+        <div className="flex justify-between p-2 items-center text-sm ">
           <select
             className="p-2 bg-gray-900 text-white m-2"
             onChange={handleLangOption}
@@ -88,7 +88,7 @@ function Header() {
               : lang[selectedLang].HeaderSearchBox}
           </button>
           <img
-            className="hidden md:inline-block rounded-md w-10 "
+            className="hidden md:block rounded-md w-10 "
             src={user?.photoURL}
             alt="img"
           />
