@@ -64,8 +64,8 @@ function Header() {
   };
 
   return (
-    <div className="absolute w-screen px-20 py-2 bg-gradient-to-b from-black  z-10 flex justify-between">
-      <img className="w-48 " src={LOGO} alt="netflix-logo" />
+    <div className="absolute w-screen px-20 py-2 bg-gradient-to-b from-black  z-10 flex  flex-col justify-between md:flex-row">
+      <img className="w-48 mx-auto md:mx-0" src={LOGO} alt="netflix-logo" />
 
       {user && (
         <div className="flex p-2 items-center">
@@ -87,8 +87,12 @@ function Header() {
               ? lang[selectedLang].homepage
               : lang[selectedLang].HeaderSearchBox}
           </button>
-          <img className="rounded-md w-10 " src={user?.photoURL} alt="img" />
-          <button className="font-bold text-white" onClick={handleSignOut}>
+          <img
+            className="hidden md:inline-block rounded-md w-10 "
+            src={user?.photoURL}
+            alt="img"
+          />
+          <button className=" font-bold text-white" onClick={handleSignOut}>
             {lang[selectedLang].signoutbtn}
           </button>
         </div>

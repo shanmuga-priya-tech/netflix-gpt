@@ -95,13 +95,17 @@ function Login() {
     <div>
       <Header />
       <div className="absolute">
-        <img src={NETFLIX_BANNER} alt="netflix-banner" />
+        <img
+          className="h-screen w-screen object-cover"
+          src={NETFLIX_BANNER}
+          alt="netflix-banner"
+        />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="p-12 w-3/12 bg-black absolute m-36 mx-auto right-0 left-0 text-white bg-opacity-80"
+        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
       >
-        <h1 className="p-2 font-bold text-3xl py-4">
+        <h1 className="font-bold text-3xl py-4">
           Sign {isSignIn ? "In" : "Up"}
         </h1>
 

@@ -6,10 +6,16 @@ function GPTSearch() {
   return (
     <div>
       <div className="fixed -z-10">
-        <img src={NETFLIX_BANNER} alt="netflix-banner" />
+        <img
+          className="h-screen w-screen object-cover "
+          src={NETFLIX_BANNER}
+          alt="netflix-banner"
+        />
       </div>
-      <GptSearchBar />
-      <GPTMovieSuggestion />
+      <div>
+        <GptSearchBar />
+        <GPTMovieSuggestion />
+      </div>
     </div>
   );
 }
