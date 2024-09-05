@@ -22,7 +22,7 @@ const useFetchMovieData = () => {
     if (!nowPlayingMovies) {
       fetchData();
     }
-  }, []);
+  }, [dispatch, nowPlayingMovies]);
 };
 
 export default useFetchMovieData;

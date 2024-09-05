@@ -20,7 +20,7 @@ const useFetchPopularMovieData = () => {
     if (!popularMovies) {
       fetchData();
     }
-  }, []);
+  }, [dispatch, popularMovies]);
 };
 
 export default useFetchPopularMovieData;

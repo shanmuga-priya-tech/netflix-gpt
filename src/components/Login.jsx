@@ -69,8 +69,6 @@ function Login() {
             });
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           setErrorMsg("User already Exists! Try Signing In");
         });
     } else {
@@ -81,11 +79,10 @@ function Login() {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          //const user = userCredential.user;
+          //console.log(user);
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           setErrorMsg("Incorrect Email Id / password");
         });
     }
