@@ -3,20 +3,19 @@ import MovieList from "../browse/secondaryContainer/MovieList";
 
 function GPTMovieSuggestion() {
   const gpt = useSelector((store) => store.GPT);
-  const { gptMovieNames, tmdbResults } = gpt;
-  if (!gptMovieNames) return null;
+  const { genAIMovieNames, tmdbResults } = gpt;
+  if (!genAIMovieNames) return null;
 
   return (
-    <div className="p-4 m-4 text-white bg-black opacity-90">
+    <div className="p-4 m-4 text-white bg-black opacity-95">
       <div>
-        {gptMovieNames.map((moviename, i) => (
+        {genAIMovieNames.map((moviename, i) => (
           <MovieList
             key={moviename}
             title={moviename}
             movies={tmdbResults[i]}
           />
         ))}
-        <h1>{gptMovieNames[0]}</h1>
       </div>
     </div>
   );

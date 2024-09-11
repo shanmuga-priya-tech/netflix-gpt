@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../../utils/languageConstants";
 import { useRef, useState } from "react";
-import openai from "../../utils/openAI";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { API_OPTION } from "../../utils/constants";
-import { addGptMovies } from "../../utils/store/gptSlice";
+import { addGenAIMovies } from "../../utils/store/gptSlice";
 
 function GptSearchBar() {
   const dispatch = useDispatch();
@@ -12,41 +12,44 @@ function GptSearchBar() {
   const selectedlang = useSelector((store) => store.config.lang);
 
   //search gpt result movie in tmdb
-  const searchGptMovieTmdb = async (moviename) => {
+  const searchGenAIMovieTmdb = async (moviename) => {
+    console.log(moviename);
     const res = await fetch(
-      `https://api.themoviedb.org/3/search/${moviename}?include_adult=false&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/search/movie?query=${moviename}&include_adult=false&language=en-US&page=1`,
       API_OPTION
     );
     const data = await res.json();
+
     return data.results;
   };
 
-  const handleGPTSearchClick = async () => {
-    const gptQuery =
+  const handleGenAISearchClick = async () => {
+    const genAIQuery =
       `act as a movie recommendation system and suggest some movies for the query` +
       searchtext?.current?.value +
       "only give me names of 5 movies,comma seperated.";
 
-    //make an api call to gpt api  to get result
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "gpt-3.5-turbo",
-    });
-    if (!gptResults.choices) {
+    const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    const genAIresults = await model.generateContent(genAIQuery);
+    if (!genAIresults) {
       setError("No results found!..😥");
     }
-    console.log(gptResults.choices?.[0]?.message?.content);
 
-    const gptResultMovieNames =
-      gptResults.choices?.[0]?.message?.content.split(",");
+    const genAIResultMovieNames =
+      genAIresults?.response.candidates?.[0].content.parts?.[0].text.split(
+        ", "
+      );
 
     //for each movieNames in results we get details of each movie in tmdb api
-    const promiseArr = gptResultMovieNames.map((movie) =>
-      searchGptMovieTmdb(movie)
+    const promiseArr = genAIResultMovieNames.map((movie) =>
+      searchGenAIMovieTmdb(movie)
     ); //[array of 5 promises]
 
     const tmdbResults = await Promise.all(promiseArr);
-    dispatch(addGptMovies({ gptResultMovieNames, tmdbResults }));
+    dispatch(addGenAIMovies({ genAIResultMovieNames, tmdbResults }));
+    searchtext.current.value = null;
   };
 
   return (
@@ -64,7 +67,7 @@ function GptSearchBar() {
           />
           <button
             className="py-2 px-4 col-span-3 m-4 bg-red-600 rounded-lg text-white"
-            onClick={handleGPTSearchClick}
+            onClick={handleGenAISearchClick}
           >
             {lang[selectedlang].search}
           </button>
