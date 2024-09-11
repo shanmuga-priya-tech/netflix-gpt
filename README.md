@@ -8,7 +8,7 @@
 - signup form
 - form validation
 - Authentication(firebase)(disable cors extension for connecting email providers)
-- firebase deployment(project url:https://netflixgpt-e0fdd.web.app)
+
 - created redux store
 - signout logic
 - Bugfix:updating the username and profile picture of the user when signup and then navigate it to browse page with this updated data to display pic else it only appears once the page reloads.
@@ -36,14 +36,15 @@
     - trending
     - top rated
     - upcoming
-- GPT USAGE:
 
-  - search bar page
-    - got result using openai api
-    - searched those results to get data of the movies in tmdb api
-    - created a state and action to store these results in movie slice.
+# GEMINI AI IN SEARCH BAR:
+
+- build a movie rcommendation sysytem using Gemni AI api
+
+  - searched those results to get data of the movies in tmdb api
+  - created a state and action to store these results in movie slice.
   - search container
-    - using the result from store
+    - displayed the tmdb ai fetched movie results in cards.
 
 - implemented a multiple language feature(eng,tam,hindi)
 - memoization.
@@ -64,4 +65,4 @@
     - movie title and description with play button
   - movie suggestion/category carousel
 
-- Gpt suugestion search bar
+- **GEMINI AI MOVIE RECOMMENDATION SYSTEM**
